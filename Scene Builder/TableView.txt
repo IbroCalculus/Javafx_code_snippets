@@ -1,0 +1,68 @@
+
+REFERENCE: Ripples code; Video 23
+
+--- Drag and drop the tablewView
+
+--- To add more columns, drag in the tableColumn
+
+--- Assume table name "table1" and columns title are Name, Address, Age with IDs; name, address, age respectively
+
+============ FXML ==========
+NB: Take note of the ? which will be replaced later on
+
+    @FXML
+    private TableView<?> table1;
+
+    @FXML
+    private TableColumn<?, ?> address;
+
+    @FXML
+    private TableColumn<?, ?> age;
+
+    @FXML
+    private TableColumn<?, ?> name;
+
+
+--- Create a Model class to be used for populating data on the table; ie Student: ----------
+
+    private String nameM;
+    private String addressM;
+    private int ageM;
+
+ --- Generate constructor as well as getters and setters ---
+
+
+--- FXML --------
+Replace the ? ? with the java model class and the data type respectively. ie: Student Integer, and do as shown below it.
+
+    @FXML
+    private TableView<Student> table1;
+
+    @FXML
+    private TableColumn<Student, String> address;
+
+    @FXML
+    private TableColumn<Student, Integer> age;
+
+    @FXML
+    private TableColumn<Student, String> name;
+    
+    ObservableList<Student> list1 = FXCollections.observableArrayList(
+            new Student("Ibrahim", 27, "Nigeria"),
+            new Student("Suleiman", 18, "Algeria")
+
+
+------- ALSO DO, ----------------
+ 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+
+        name.setCellValueFactory(new PropertyValueFactory<Student, String>("nameM"));
+        age.setCellValueFactory(new PropertyValueFactory<Student, Integer>("ageM"));
+        address.setCellValueFactory(new PropertyValueFactory<Student, String>("addressM"));
+        
+        table1.setItems(list1);
+    }
+
+

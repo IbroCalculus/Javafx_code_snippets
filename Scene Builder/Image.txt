@@ -1,0 +1,20 @@
+
+============ 1. IN NETBEANS ============= 
+ Within Netbeans, right-click on "Source Packages", Create New Image Folder, copy and paste image into it.
+ 
+ In Scenebuilder, use Imageview, navigate to image location.
+
+
+=== URL IMAGES ===
+ In Netbeans, open the .fxml file, Within image tag; <image> replace the URL to that of the image online
+
+
+
+
+
+=========== 2. IN INTELIJ ================
+- Right click on the package (where Controller and Main java files are located) and create an image package (ie com.example.javafxpractice1.Images)
+
+- Copy and paste the image within the images package, keeping the image file extension assuming the image was renamed
+
+- In Scenebuilder, use Imageview, navigate to image location.

@@ -1,0 +1,13 @@
+
+
+    @FXML
+    private WebView webView1;
+    WebEngine webEngine;    
+    
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        webEngine = webView1.getEngine();
+        webEngine.load("http://www.google.com");
+        //webEngine.loadContent("<html><h1>This is a H1 heading file </h1></html>");
+    }

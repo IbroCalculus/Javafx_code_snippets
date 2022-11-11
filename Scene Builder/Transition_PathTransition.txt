@@ -1,0 +1,25 @@
+
+ Place Path in SceneBuilder and make invisible. Any shape can be used as path.
+
+
+    @FXML
+    private Circle circle;
+
+    @FXML
+    private Path path;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+        PathTransition tt = new PathTransition();
+        tt.setPath(path);
+        tt.setDuration(Duration.seconds(4));
+        tt.setNode(circle);
+        tt.setAutoReverse(true);
+        tt.setCycleCount(PathTransition.INDEFINITE);
+        tt.play();
+        tt.setOnFinished(e->
+        {
+            System.out.println("Iteration finished");
+        });
+    }

@@ -1,0 +1,6 @@
+
+String v1 =  et_fieild1.getText();
+int v1 = Integer.parseInteger(et_field1.getText());
+
+
+- Can be made editable or disable editable

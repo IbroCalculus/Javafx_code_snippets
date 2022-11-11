@@ -1,0 +1,8 @@
+
+ There are different types of animations/transitions like:
+
+ 1. Translate transition
+ 2. FadeIn_FadeOut transition
+ 3. Parallel transition
+ 4. Scale transition
+ 5. Rotate transition

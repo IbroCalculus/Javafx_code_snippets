@@ -1,0 +1,59 @@
+
+ Use buttons
+
+
+ DECLARE ARRAY VARIABLE TO ENABLE SELECTION OF MULTIPLE FILE EXTENSIONS LIKE; .doc, .docx, .DOC, .DOCX. ie; lstFile
+
+
+public class FXMLDocumentController implements Initializable {
+    
+    List<String> lstFile;
+
+    @FXML
+    private Button btn_singleFile;
+
+    @FXML
+    private Button btn_multiFile;
+
+
+// MULTIPLE FILE SELECTION
+
+    @FXML
+    void selectMultiple(ActionEvent event) {
+        FileChooser filechooser1 = new FileChooser();
+        //filechooser1.getExtensionFilters().add(new ExtensionFilter("PDF Files","*.pdf")); //Optional; Chooses a type of file
+        List<File> list1 = filechooser1.showOpenMultipleDialog(null);
+        for (File file: list1)
+        {
+            System.out.println("ABSOLUTE PATH: " + file.getAbsolutePath());
+        }
+    }
+
+
+// SINGLE FILE SELECTION
+
+
+    @FXML
+    void selectSingle(ActionEvent event) {
+        FileChooser filechooser2 = new FileChooser();
+        //filechooser2.getExtensionFilters().add(new ExtensionFilter("PDF Files","*.pdf")); //Optional; Chooses a type of file
+        filechooser2.getExtensionFilters().add(new ExtensionFilter("Word Files", lstFile)); //Optional; Chooses a type of file. lstFile declared above
+        File file = filechooser2.showOpenDialog(null);
+        if(file != null)
+        {
+            System.out.println("ABSOLUTE PATH: " + file.getAbsolutePath());
+        }
+    }
+
+
+// USE THIS IF MULTIPLE FILE EXTENSION IS USED alongside the declared arrayList variable.
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        lstFile = new ArrayList<>();
+        lstFile.add("*.doc");
+        lstFile.add("*.docx");
+        lstFile.add("*.DOC");
+        lstFile.add("*.DOCX");
+        // TODO
+    }

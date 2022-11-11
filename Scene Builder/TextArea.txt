@@ -1,0 +1,6 @@
+
+TextField tf_1
+TextArea ta_1
+
+--- Append text in TextArea ---
+ta_1.append(tf_1.getText() + "\n")

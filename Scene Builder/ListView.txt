@@ -1,0 +1,37 @@
+
+CHECK: ChoiceBox and/or ComboBox to populate listview using similar method
+
+    @FXML
+    private Button btn1;
+
+    @FXML
+    private ListView<String> listView1;
+
+    @FXML
+    void onbtn1Clicked(ActionEvent event) {
+
+        //Get the currently selected single object in the model
+        String x = listView1.getSelectionModel().getSelectedItem();
+        int y = listView1.getSelectionModel().getSelectedIndex();
+        System.out.printf("Item: %s, of index %d", x,y);
+
+
+        //Get the currently selected multiple object in the model
+        ObservableList<String> x2 = listView1.getSelectionModel().getSelectedItems();        //NB: getSelectedItems();   THE 's'
+        ObservableList<Integer> y2 = listView1.getSelectionModel().getSelectedIndices();     //NB: getSelectedIndices(); THE 'indices' instead of 'index'
+
+        for(String a: x2){
+            System.out.printf("%s ", a);
+        }
+        System.out.println();
+        for(int b: y2){
+            System.out.printf("%d ", b);
+        }
+
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        listView1.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);  //Set selection mode to be either single (.SINGLE) or Multiple

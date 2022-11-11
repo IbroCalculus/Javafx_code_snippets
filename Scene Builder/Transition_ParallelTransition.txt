@@ -1,0 +1,29 @@
+
+ Used to run multiple transitions simultaneously
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+        TranslateTransition tt = new TranslateTransition();
+        tt.setDuration(Duration.seconds(3));
+        tt.setNode(circle);
+        tt.setToX(-30);
+        tt.setToY(30);
+        tt.setAutoReverse(true);
+        tt.setCycleCount(TranslateTransition.INDEFINITE);
+        
+        
+        ScaleTransition st = new ScaleTransition();
+        st.setDuration(Duration.seconds(3));
+        st.setNode(circle);
+        st.setToX(-3);
+        st.setToY(3);
+        st.setAutoReverse(true);
+        st.setCycleCount(ScaleTransition.INDEFINITE);
+        
+        ParallelTransition pt = new ParallelTransition(tt,st);
+        pt.setCycleCount(ParallelTransition.INDEFINITE);
+        pt.setAutoReverse(true);
+        pt.play();
+        
+    }

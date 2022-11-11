@@ -1,0 +1,20 @@
+
+        HBox root = new HBox();
+
+        TreeView treeview = new TreeView();
+        
+        TreeItem<String> treeitem1 = new TreeItem<String>("Parent");
+        treeitem1.setExpanded(true);
+        
+        TreeItem<String> item1 = new TreeItem<String>("first Item");
+        TreeItem<String> item2 = new TreeItem<String>("second Item"); 
+        TreeItem<String> item3 = new TreeItem<String>("third Item"); 
+        TreeItem<String> item4 = new TreeItem<String>("fourth Item"); 
+        TreeItem<String> item5 = new TreeItem<String>("fifth Item");
+        
+        treeitem1.getChildren().addAll(item1,item2,item3,item4,item5);
+        treeview.setRoot(treeitem1);
+        root.getChildren().add(treeview);
+        
+        
+        Scene scene = new Scene(root, 300, 250);

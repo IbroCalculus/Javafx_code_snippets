@@ -1,0 +1,4 @@
+
+This is a container that re-positions components based resizing the windows. It does not resize the components, only re-position them in a vertical\horizontal\grid-like manner.
+
+Make it the root window. ie No anchor pane.

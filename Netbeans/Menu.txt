@@ -1,0 +1,44 @@
+
+        MenuBar menubar = new MenuBar();
+        
+        Menu fileMenu = new Menu("File");
+        MenuItem newFile = new MenuItem("New File");
+        MenuItem save = new MenuItem("Save");
+        SeparatorMenuItem separator = new SeparatorMenuItem();
+        CheckMenuItem chck = new CheckMenuItem("Show");
+        
+        RadioMenuItem rad1 = new RadioMenuItem("Radio 1");
+        RadioMenuItem rad2 = new RadioMenuItem("Radio 2");
+        ToggleGroup tg1 = new ToggleGroup();
+        rad1.setToggleGroup(tg1);
+        rad2.setToggleGroup(tg1);
+        
+        SeparatorMenuItem separator1 = new SeparatorMenuItem();
+        MenuItem exit = new MenuItem("Exit");
+        
+        
+        fileMenu.getItems().addAll(newFile, save, separator, chck, rad1, rad2, separator1, exit);        
+        
+        Menu editMenu = new Menu("Edit");
+        Menu formatMenu = new Menu("Format");
+        
+        menubar.getMenus().addAll(fileMenu, editMenu, formatMenu);
+        
+        BorderPane borderPane = new BorderPane();
+        borderPane.setTop(menubar);
+        
+        Scene scene = new Scene(borderPane, 500, 250);
+        
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show(); 
+        
+        newFile.setOnAction(e->{
+            System.out.println("You clicked on New File");
+        });
+        save.setOnAction(e->{
+            System.out.println("You clicked on Save");
+        });
+        exit.setOnAction(e->{
+            System.out.println("You clicked on Exit");
+        });

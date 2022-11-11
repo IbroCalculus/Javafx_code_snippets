@@ -1,0 +1,6 @@
+
+	Label label = new Label();
+	label.setText("This a the first label);
+
+        Label label1 = new Label("This is a Label");
+        root.getChildren().add(label1);

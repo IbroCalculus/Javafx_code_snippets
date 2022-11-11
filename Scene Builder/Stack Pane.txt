@@ -1,0 +1,32 @@
+ In this, views or elements and placed as a stack (ie placed on top one another). use visibily on/off to view the ones below.
+ maninpulate the stacked views using visibility.
+
+ #On mouse Clicked
+
+    @FXML
+    private ImageView img1;
+
+    @FXML
+    private ImageView img2;
+
+    @FXML
+    private ImageView img3;
+
+
+    @FXML
+    void OnImg1Click(MouseEvent event) {
+        img1.setVisible(false);
+        img3.setVisible(true);
+        img2.setVisible(true);
+    }
+
+    @FXML
+    void OnImg2Click(MouseEvent event) {
+        img2.setVisible(false);
+    }
+
+    @FXML
+    void OnImg3Click(MouseEvent event) {
+        img3.setVisible(false);
+        img1.setVisible(true);
+    }

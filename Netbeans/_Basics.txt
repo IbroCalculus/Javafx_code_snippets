@@ -1,0 +1,9 @@
+ 
+ A JavaFX project when created has 3 files:
+ 1. Main.Java
+ 2. Controller
+ 3. sample.fxml
+
+ TERMS:
+ -1. Stage: Similar to a JFrame in Swing or root window
+ -2. Scene: Similar to a panel in Swing, it is placed inside of a stage

@@ -1,0 +1,4 @@
+
+ Use BorderPane as the root pane
+ Place menubar within the BorderPane, resize border pane to fit menubar
+ Search 'Menu' for other menu options like menuitem, menuseparator etc

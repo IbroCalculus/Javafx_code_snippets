@@ -1,0 +1,33 @@
+      
+        HBox root = new HBox(); 
+        
+        //METHOD 1
+        ChoiceBox<String> choicebox1 = new ChoiceBox<>();
+        choicebox1.getItems().addAll("One", "Two", "Three", "Four", "Five");
+        choicebox1.setValue("Four");
+        root.getChildren().addAll(choicebox1);
+        
+        //METHOD 2        
+        ObservableList<String> items2 =FXCollections.observableArrayList("One", "Two", "Three", "Four");
+        ChoiceBox<String> choicebox2 = new ChoiceBox<>(items2);
+        choicebox2.setValue("Three");
+        root.getChildren().addAll(choicebox2);
+        
+        //METHOD 3
+        ObservableList<String> items3 =FXCollections.observableArrayList("One", "Two", "Three", "Four", "Five", "Six");
+        ChoiceBox<String> choicebox3 = new ChoiceBox<>();
+        choicebox3.setItems(items3);
+        choicebox3.setValue("Six");
+        root.getChildren().addAll(choicebox3);
+        
+        Scene scene = new Scene(root, 300, 250);
+        
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show(); 
+
+	//EVENT LISTENER
+        choicebox1.getSelectionModel().selectedItemProperty().addListener((v,ov,nv)->{
+            System.out.println("Old value: " + ov + ", New value: " + nv);
+        });     
+        

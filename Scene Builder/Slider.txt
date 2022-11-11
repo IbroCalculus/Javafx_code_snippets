@@ -1,0 +1,28 @@
+
+    @FXML
+    private Slider slider1;
+
+    @FXML
+    private TextField textField1;
+
+
+    @FXML
+    void onbtn1Clicked(ActionEvent event) {
+        System.out.println(slider1.getValue());
+    }
+
+
+    @FXML
+    void onslider1Dragged(MouseEvent event) {
+        lbl1.setText(String.valueOf(slider1.getValue()));
+    }
+
+
+ ================== Binding slider and textfield ================
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        textField1.textProperty().bindBidirectional(slider1.valueProperty(), NumberFormat.getNumberInstance());
+
+    }

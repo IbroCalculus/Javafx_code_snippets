@@ -1,0 +1,13 @@
+
+        HBox root = new HBox();
+        
+        ListView<String> listview1 = new ListView();
+        listview1.getItems().addAll("One","Two","Three","Four","Five","Six");        
+        //listview1.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);        
+        listview1.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        listview1.getSelectionModel().selectedItemProperty().addListener((v,ov,nv)->{
+            System.out.println("Old value: " + ov + ", New Value: " + nv);
+        });
+        root.getChildren().addAll(listview1);        
+        
+        Scene scene = new Scene(root, 300, 250);

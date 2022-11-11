@@ -1,0 +1,4 @@
+
+ Right click on "Source Packages" -> Create New File (ie: Images) -> Copy and Paste Image into the Images folder.
+
+ PASS FOR NOW, SOME ERRORS

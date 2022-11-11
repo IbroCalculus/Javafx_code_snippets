@@ -1,0 +1,19 @@
+
+    @FXML
+    private Circle circle;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        ScaleTransition tt = new ScaleTransition();
+        tt.setDuration(Duration.seconds(3));
+        tt.setNode(circle);
+        tt.setToX(-3);
+        tt.setToY(3);
+        tt.setAutoReverse(true);
+        tt.setCycleCount(ScaleTransition.INDEFINITE);
+        tt.play();
+        tt.setOnFinished(e->
+        {
+            System.out.println("Iteration finished");
+        });
+    }

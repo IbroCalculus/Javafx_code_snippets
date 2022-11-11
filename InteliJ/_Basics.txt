@@ -1,0 +1,35 @@
+ 
+ CREATING NEW JavaFX project in NETBEANS
+
+ There are two ways to create a javaFx project in Netbeans;
+ 1. is such that the project will be written in codes using Java. (Good to learn this for a start)
+ 2. is such that it will be configured to be designed with Scene builder. (I normally use this one)
+ 
+ FOR 1. New -> Project -> JavaFX -> JavaFx Application -> Check only "Create Application Class"
+ FOR 2. New -> Project -> JavaFX -> JavaFX FXML Application -> Check only "Create Application Class"
+ I normally use 2, work with "Scene builder"
+
+ 
+ BASIC STAGE SETUP
+        Scene scene = new Scene(root, 300, 250);
+        
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+ 
+
+ CREATE NEW FILE (ie .css file) WITHIN A JAVAFX PROJECT FOLDER
+ FOR 2. Right click -> New -> Other -> Other -> Empty File -> Application.css
+ 
+
+ JavaFx application are faster compared to Swing or AWT applications.
+
+ 
+ A JavaFX project when created has 3 files:
+ 1. Main.Java
+ 2. Controller
+ 3. sample.fxml
+
+ TERMS:
+ -1. Stage: Similar to a JFrame in Swing or root window. It is the main window
+ -2. Scene: Similar to a panel in Swing, it is placed inside of a stage. Add widgets on scene

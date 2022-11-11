@@ -1,0 +1,27 @@
+
+    @FXML
+    private Button btnCheck;
+
+    @FXML
+    private CheckBox chkbx;
+
+    @FXML
+    void onChkbx(ActionEvent event) {
+        if(chkbx.isSelected()){
+            System.out.println("Checkbox is checked");
+        }else if(!chkbx.isSelected()){
+            System.out.println("Checkbox is not checked");
+        }
+    }
+
+    @FXML
+    void onbtnCheck(ActionEvent event) {
+        if(chkbx.isSelected()){
+            System.out.println("Checkbox is checked");
+        }else if(!chkbx.isSelected()){
+            System.out.println("Checkbox is not checked");
+        }
+
+
+-------------
+            chkbx.setSelected(false);

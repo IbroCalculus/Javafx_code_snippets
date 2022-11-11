@@ -1,0 +1,52 @@
+
+ CREATE NEW STAGE
+
+    @Override
+    public void start(Stage primaryStage) {
+        
+        HBox root = new HBox();        
+        Button btn = new Button("Go To Next Window");        
+        root.getChildren().addAll(btn);
+        
+        Scene scene = new Scene(root, 300, 250);
+        
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();      
+        
+         btn.setOnAction(f->{
+             openNewStage();
+         }
+         );
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+
+    private void openNewStage() {
+        Stage newStage = new Stage();
+        newStage.initModality(Modality.APPLICATION_MODAL);
+        //newStage.initModality(Modality.WINDOW_MODAL);
+        //newStage.initModality(Modality.NONE);        
+        
+        HBox hbox2 = new HBox();
+        Button btnCloseStage = new Button("Close this window"); 
+        Label label2 = new Label("Welcome to a new Stage/Window");
+        hbox2.getChildren().addAll(btnCloseStage);
+        
+        Scene scene2 = new Scene(hbox2, 500, 500);
+        newStage.setScene(scene2);
+        newStage.show();
+        
+        btnCloseStage.setOnAction(f->{
+            newStage.close();
+        });
+
+
+	//For default 'X' close button
+        newStage.setOnCloseRequest(g->{
+            newStage.close();
+        });

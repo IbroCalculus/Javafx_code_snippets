@@ -1,0 +1,30 @@
+
+ Assume 3 radio buttons of id rad1, rad2, rad3;
+ Within each, go to properties and give thesame Toggle Group name
+ Also, give the same on Action function for all radio buttons.
+
+
+    @FXML
+    private RadioButton rad1;
+
+    @FXML
+    private ToggleGroup tg;
+
+    @FXML
+    private RadioButton rad2;
+
+    @FXML
+    private RadioButton rad3;
+    
+    
+    @FXML
+    void disp(ActionEvent event) {
+        if(rad1.isSelected()){
+            System.out.println("Rad1 was selected");
+        }
+        else if(rad2.isSelected()){
+            System.out.println("Rad2 was selected");
+        }
+        else if(rad3.isSelected()){
+            System.out.println("Rad3 was selected");
+        }

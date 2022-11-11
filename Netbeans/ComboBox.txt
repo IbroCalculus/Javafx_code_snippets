@@ -1,0 +1,20 @@
+
+        HBox root = new HBox(); 
+        
+        //METHOD 1
+        ComboBox<String> combobox1 = new ComboBox<>();
+        combobox1.getItems().addAll("One", "Two", "Three", "Four", "Five");
+        combobox1.setPromptText("Pick any value");
+        //combobox1.setValue("Six");
+        combobox1.setEditable(true);
+        root.getChildren().addAll(combobox1);
+
+        Scene scene = new Scene(root, 300, 250);
+        
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();  
+
+        combobox1.getSelectionModel().selectedItemProperty().addListener((v,ov,nv)->{
+            System.out.println("Old value: " + ov + ", New value: " + nv);
+        });

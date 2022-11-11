@@ -1,0 +1,31 @@
+
+ CREATE A NEW SCENE
+
+    @Override
+    public void start(Stage primaryStage) {
+              
+        HBox root = new HBox();        
+        Button btn = new Button("Go To Next Scene");        
+        root.getChildren().addAll(btn);
+        
+        Scene scene = new Scene(root, 300, 250);
+        
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();      
+        
+         btn.setOnAction(f->{
+             VBox vbox2 = new VBox();
+             Button btnScene2Back = new Button("PREVIOUS SCENE");
+             Label label2 = new Label("Welcome to Scene 2");
+             
+             vbox2.getChildren().addAll(btnScene2Back, label2);
+             
+             Scene scene2 = new Scene(vbox2, 500, 500);
+             primaryStage.setScene(scene2);
+             
+             btnScene2Back.setOnAction(e->{primaryStage.setScene(scene);});
+             
+         }
+         );
+    }

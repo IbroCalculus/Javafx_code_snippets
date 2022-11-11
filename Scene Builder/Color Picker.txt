@@ -1,0 +1,12 @@
+ 
+    @FXML
+    private Circle circle;
+    
+    
+    @FXML
+    private ColorPicker colorPicker;
+    
+    @FXML
+    void onColorPicked(ActionEvent event) {
+        circle.setFill(colorPicker.getValue());
+    }

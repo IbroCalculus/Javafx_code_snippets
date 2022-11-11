@@ -1,0 +1,24 @@
+
+ E.g Use a shape, ie a cirlce. Things like images can be used as well
+
+
+    @FXML
+    private Circle circle;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        TranslateTransition tt = new TranslateTransition();
+        tt.setDuration(Duration.seconds(3));
+        tt.setNode(circle);
+        tt.setToX(-300);
+        tt.setToY(-300);
+        tt.setAutoReverse(true);
+        tt.setCycleCount(2);
+        //tt.setCycleCount(TranslateTransition.INDEFINITE);
+        tt.play();
+        tt.setOnFinished(e->
+        {
+            System.out.println("Iteration finished");
+        });
+    }
+

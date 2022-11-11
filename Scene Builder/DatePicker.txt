@@ -1,0 +1,10 @@
+
+    @FXML
+    private DatePicker datepicker1;
+
+    @FXML
+    void selectDate(ActionEvent event) {
+        String dateValue = datepicker1.getValue().toString();
+        //String dateValue = datepicker1.getValue().getYear();
+        lblDisplay.setText(dateValue);
+    }

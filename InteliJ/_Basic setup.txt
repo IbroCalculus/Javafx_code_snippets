@@ -1,0 +1,20 @@
+
+- File -> New Project -> JavaFX -> Give title and leave others default; ie Java, Maven, JUnit, except perhaps Group(package name)
+
+- No Dependencies shouuld be selected
+
+- File -> Project Structure -> Libraries -> "+" -> Java -> Navigate to JavaFx sdk, highlight on lib folder and OK -> Apply -> OK
+
+- (For jFoenix library), same as above -> highlight on the jfoenix.jar -> OK -> Apply -> OK
+
+- Within .java (NOT Controller.jav), Scene scene... remove the dimension in other to work with scenebuilder dimension; ie:
+        Scene scene = new Scene(fxmlLoader.load());
+
+- Witin Controller.java, implement Initializable:
+       public class HelloController implements Initializable {
+
+    public void initialize(URL url, ResourceBundle rb) {
+
+    }
+
+- To run, within .java(NOT Controller.java) for the first time, click on the green indicator beside 'public class APPLICATIONNAME extends ...

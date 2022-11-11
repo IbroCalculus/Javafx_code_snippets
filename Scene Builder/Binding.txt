@@ -1,0 +1,38 @@
+
+This is when two javafx widgets (ie an input and a label (textview)) are synchronized or linked together
+Such that a change in one is immediately reflected in the other. 
+E.g Type in the text field, immediately the text will reflected in the label.
+
+There are of 2 types; Unidirectional binding and bidirectional binding.
+
+---- Unidirectional ---------
+Changes in one widget is binded to the other, but not the other way round.
+E.g a textfield and a label, type in textfield is reflected in the label instantaneously.
+
+--- Bidirectional -------
+Changes in one widget is binded to ther other, likewise changes in the other is binded to the former, Works both ways.
+E.g two textfields binded to each other, type in any is reflected in the other.
+
+
+
+============= E.g ================
+
+    @FXML
+    private Label lbl1;
+
+    @FXML
+    private PasswordField pswdField1;
+
+    @FXML
+    private TextField txField1;
+
+    @FXML
+    private TextField txField2;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        lbl1.textProperty().bind(txField1.textProperty());                      // Unidirectional. NOTE the order, lbl1....txFieild1, NOT txField1....lbl1
+        txField2.textProperty().bindBidirectional(pswdField1.textProperty());   // Bidirectional
+

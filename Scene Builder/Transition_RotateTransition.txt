@@ -1,0 +1,19 @@
+
+    @FXML
+    private Rectangle rectangle;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        RotateTransition tt = new RotateTransition();
+        tt.setDuration(Duration.seconds(2));
+        tt.setNode(rectangle);
+        tt.setFromAngle(0);
+        tt.setToAngle(360);
+        tt.setAutoReverse(true);
+        tt.setCycleCount(ScaleTransition.INDEFINITE);
+        tt.play();
+        tt.setOnFinished(e->
+        {
+            System.out.println("Iteration finished");
+        });
+    }

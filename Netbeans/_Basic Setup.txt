@@ -1,0 +1,28 @@
+CHECK: How to install java 11.0.6
+
+NB: Don't forget to clean and build after every modification in either the Netbeans and Scenebuilder, for this changes to be applied.
+NB: After series of failures running javaFx on Apache Netbeans, I researched, experimented and came up with the solution as indicated.
+
+1. New Project -> Java Ant -> JavaFX -> JavaFX FXML Application (JavaFX Application does not contain FXML, hence don't use that)
+
+2. Right click on the project -> Properties
+
+3. Run -> Vm Options:
+--module-path "C:\Users\USER\Downloads\Compressed\openjfx-17.0.1_windows-x64_bin-sdk\javafx-sdk-17.0.1\lib" --add-modules=javafx.controls,javafx.fxml
+(The path "C\Users\..." is where the sdk is presently located on my device).
+NB: I ignored this part, but it still worked
+
+4. Still within Properties; -> Libraries
+
+5. "Compile" tab -> Modulepath ->> + ->> Add Library ->> javafx-sdk-17.0.1
+6. "Compile" tab -> Classpath  ->> + ->> Add JAR/Folder ->> within javafx-sdk-17.0.1 lib folder, select and open all the .jar files (presently 8 files)
+
+7. "Run" tab -> Modulepath ->> + ->> Add Library ->> javafx-sdk-17.0.1
+
+OK and Exit the pane
+
+9. Clean and Build, ignore the red error output
+
+10. Run project from within the .java(NOT Controller.java) and NOT the entire project
+
+11. After every modification, Clean and build before running to apply the changes

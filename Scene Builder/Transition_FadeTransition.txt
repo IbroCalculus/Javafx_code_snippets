@@ -1,0 +1,20 @@
+
+    @FXML
+    private Rectangle rectangle;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+        FadeTransition tt = new FadeTransition();
+        tt.setDuration(Duration.seconds(1));
+        tt.setNode(rectangle);
+        tt.setFromValue(0.0);
+        tt.setToValue(1.0);
+        //tt.setAutoReverse(true);
+        tt.setCycleCount(ScaleTransition.INDEFINITE);
+        tt.play();
+        tt.setOnFinished(e->
+        {
+            System.out.println("Iteration finished");
+        });
+    }

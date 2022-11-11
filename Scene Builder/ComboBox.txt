@@ -1,0 +1,47 @@
+
+CHECK ALSO; CheckBox
+
+    @FXML
+    private Button btn1;
+
+    @FXML
+    private ComboBox<?> comboBox1;  //Replace ? with data type, ie; String
+
+
+    @FXML
+    void oncomboBox1Clicked(ActionEvent event) {
+        String comboBox1Value = comboBox1Box1.getValue();
+        System.out.println(comboBox1sValue);
+    }
+
+
+
+    @FXML
+    void oncomboBox1Clicked(ActionEvent event) {
+        System.out.printf("You selected: %s \n", comboBox1.getValue());
+    }
+
+=========   =======
+NB: Shown here, there are 4 methods by which the choicebox can be populated!
+
+    private ObservableList<String> list = FXCollections.observableArrayList("Nigeria", "Russia", "China");  //Method 3. Check initialize(URL... for continuation
+
+
+    private final String[] listItems = {"", "Africa", "Europe", "Asia", "Austria"};   //Method 4. Check initialize(URL... for continuation
+    private ObservableList<String> list2 = FXCollections.observableArrayList(listItems);
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        comboBox1.getItems().add("One");     // Method 1
+        comboBox1.getItems().add("Two");
+
+        comboBox1.getItems().addAll("Three", "Four", "Five","Six");    // Method 2
+
+        choiceBox1.setItems(list);    // Method 3, check private ObservableList<String> list = FX....  //Method 3
+
+        choiceBox1.setItems(list2);  // Method 4
+
+    }

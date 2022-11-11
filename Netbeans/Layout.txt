@@ -1,0 +1,18 @@
+ 
+ VBox vbox1 = new Vbox();			-> Vertical stack
+ HBox hbox1 = new Hbox();			-> Horizontal stack
+
+ BorderPane bordePane = new BorderPane();	-> Consists of 5 postions, Top(Default Menubar postion), Bottom, Right, Left, Center
+
+	E.g: borderPane.setTop(menubar);
+             borderPane.setBottom(menubar);
+             borderPane.setRight(menubar);
+             borderPane.setLeft(menubar);
+             borderPane.setCenter(menubar);
+
+
+
+ TO ADD WIDGETS TO A SCENE
+ 
+        vbox1.getChildren().add(btn);				//<- Single widget
+        vbox1.getChildren().addAll(btn, btn1, label1);		//<- Multiple widgets

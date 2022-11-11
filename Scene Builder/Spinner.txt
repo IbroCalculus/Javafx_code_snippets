@@ -1,0 +1,32 @@
+
+    @FXML
+    private Button btn1;
+
+
+    @FXML
+    private Spinner<Integer> spinnner1;
+
+    private static final int INITIAL_VALUE = 2;
+    SpinnerValueFactory<Integer> spinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10, INITIAL_VALUE);
+
+
+    @FXML
+    private Spinner<String> spinner2;
+
+    ObservableList<String> observableList = FXCollections.observableArrayList("One", "Two", "Three", "Four");
+    SpinnerValueFactory<String> spinnerValueFactory2 = new SpinnerValueFactory.ListSpinnerValueFactory<>(observableList);
+
+
+    @FXML
+    void onbtn1Click(ActionEvent event) {
+        System.out.println(spinnner1.getValue());
+        System.out.println(spinner2.getValue());
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        spinnner1.setValueFactory(spinnerValueFactory);
+        spinner2.setValueFactory(spinnerValueFactory2);
+    }
