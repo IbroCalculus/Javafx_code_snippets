@@ -1,0 +1,41 @@
+1. ========================= EXITING FROM AN APPLICATION PROGRAMMATICALLY (explicit exit) ================
+
+--------------------------- Within FXML ---------------------------
+
+    @FXML
+    protected void onHelloButtonClick() {
+
+        Platform.exit();    // This will call the stop method automatically, without generating the code.
+                           // To add anything within the stop method, ie Alert, override within the Application.java as shown below. Not compulsory
+    }
+
+
+
+--------------------------- Within .java ---------------------------
+
+        stage.show();
+    }
+
+
+    @Override
+    public void stop() throws Exception {
+        System.out.println("Exiting application");
+    }
+
+
+
+    public static void main(String[] args) {
+        launch();
+    }
+}
+
+
+
+
+2. ======================= TO DISABLE IMPLICIT EXIT (App windows will close on 'X' pressed, but application still runs) ==============
+
+--------------------------- Within .java ---------------------------
+
+    public void start(Stage stage) throws IOException {
+
+        Platform.setImplicitExit(false);    // This

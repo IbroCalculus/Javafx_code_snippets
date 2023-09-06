@@ -1,15 +1,10 @@
 
  WATCH: Ripples Code JAVAFx Tutorial 17- SceneBuilder CSS_HD
 
- Create CSS File, ie;
- Right Click -> New -> Other -> Other -> Cascading Style Sheet
+==========  =================
 
-- Bind CSS file to project
-        Scene scene = new Scene(root, 1000, 500);
-        scene.getStylesheets().add("/javafx_test1/myCSS.css");
-
-
-=== CSS FILE SYNTAX ===
+Create a css file. ie style.css
+ Right Click -> New -> Other -> Other -> Cascading Style Sheet (NETBEANS)
 
 .root     //The root or anchorPane
 {
@@ -20,3 +15,18 @@
 {
     -fx-background-color: #ff0000;
 }
+
+#btn1{   //For button with ID btn1
+    -fx-background-color: #ff0000;
+}
+
+
+- Bind CSS file to project
+        Scene scene = new Scene(root, 1000, 500);
+        scene.getStylesheets().add("/javafx_test1/myCSS.css");
+
+- Within Scene builder;
+   Preview -> Scene Style Sheet -> Add a Style Sheet. (Add the style.css)
+   Also, clicking on the root pain (ie AnchorPane) -> Properties - StyleSheet
+
+

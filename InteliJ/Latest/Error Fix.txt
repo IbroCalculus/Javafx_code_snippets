@@ -1,0 +1,8 @@
+
+=== Error Fix 1 =====
+if after running, error warning but still running:
+
+  Loading FXML document with JavaFX API of version 19 by JavaFX runtime of version 11.0.2
+
+To fix, go to .fxml, within <AnchorPane xmlns="http://javafx.com/javafx/19" change from 19 to 11.0.2. ie
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2"

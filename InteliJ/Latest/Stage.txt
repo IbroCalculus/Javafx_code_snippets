@@ -1,0 +1,19 @@
+Check also; Icon.txt, 
+            Resizeable.txt (for resizing the stage or disable resizing)
+
+
+====== 1. Set Stage Display Position ====
+By default, the stage is displayed in the middle of the screen
+
+        stage.setX(0);
+        stage.setY(0);
+
+
+===== 2. FullScreen ========
+        stage.setFullScreen(true);
+
+        stage.setFullScreenExitHint("<--- Press 'e' to exit --->");         //These 2 are optional
+        stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("e"));
+
+
+

@@ -1,6 +1,5 @@
 
-CHECK ALSO: ComboBox
-
+CHECK ALSO: ComboBox  (Both are similar, better use the Combobox)
 
 
     @FXML
@@ -9,6 +8,11 @@ CHECK ALSO: ComboBox
 ================= ======
 NB: Shown here, there are 4 methods by which the choicebox can be populated!
 
+IMPLEMENT INITIALIZABLE AND IMPLEMENT THE 'initialize' method, ie; 
+		
+	public class HelloController implements Initializable {
+
+-------
     private ObservableList<String> list = FXCollections.observableArrayList("Nigeria", "Russia", "China");  //Method 1. Check initialize(URL... for continuation
 
 

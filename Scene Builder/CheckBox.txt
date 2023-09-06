@@ -1,3 +1,4 @@
+You can check the 'indeterminate' field, It works just as the name specifies. I see no reason to use it.
 
     @FXML
     private Button btnCheck;

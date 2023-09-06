@@ -1,4 +1,5 @@
 
 On Scence builder, it is within 'Miscellaneous'
 
-Drag it over the widget you want to give a tooltip and give the tooltip a texts
+Drag it over the widget you want to give a tooltip and give the tooltip a texts.
+Set tooltip value within properties section

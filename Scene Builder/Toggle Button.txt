@@ -1,0 +1,42 @@
+Can group toggle buttons like radio buttons using a ToggleGroup
+
+ Assume 3 toggle buttons of id toggle1, toggle2, toggle3;
+ Within each, go to properties and give thesame Toggle Group name (If you want to group them, and hence enable only one selection)
+ Also, give the same on Action function for all radio buttons.
+
+    @FXML
+    private ToggleGroup tg2;
+
+    @FXML
+    private ToggleButton toggle1;
+
+    @FXML
+    private ToggleButton toggle2;
+
+    @FXML
+    private ToggleButton toggle3;
+
+    @FXML
+    void disp(ActionEvent event) {
+        if(toggle1.isSelected()){
+            System.out.println("Toggle 1 selected");
+        }else if(toggle2.isSelected()){
+            System.out.println("Toggle 2 selected");
+        }else if(toggle3.isSelected()){
+            System.out.println("Toggle 3 selected");
+        }
+    }
+
+
+-------- For a single toggle button, which is not part of a toggle group ------------------
+
+    @FXML
+    private ToggleButton toggle4;
+
+    @FXML
+    void disp2(ActionEvent event) {
+        if(toggle4.isSelected()){
+            System.out.println("Toggle 4 selected");
+        }else{
+            System.out.println("Toggle 4 unselected");
+        }

@@ -1,0 +1,72 @@
+
+To run a process in the background thread, can refer to Java multithreading code snippet, which is used in the example below.
+
+---- Assume a button 'btnLogin'. onClicked, it will run a background process, simple for-loop in this case.
+
+    @FXML
+    private Button btnLogin;
+
+    @FXML
+    void onButtonClicked(ActionEvent event) {
+
+            Thread runnable1 = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    btnLogin.setDisable(true);
+                    for(int i=0; i<=5; i++){
+                        System.out.println("Count >>>" + i);
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    btnLogin.setDisable(false);
+                }
+            });
+            runnable1.start();
+    }
+
+
+
+---- UPDATING THE UI THREAD FROM A BACKGROUND THREAD -----------
+Use;
+	Platform.runLate(new Runnable(){.... as shown:
+
+
+    @FXML
+    void onButtonClicked(ActionEvent event) {
+            Thread runnable1 = new Thread(new Runnable() {
+
+                @Override
+                public void run() {
+                    btnLogin.setDisable(true);
+                    for(int i=0; i<=5; i++){
+                        System.out.println("Count >>>" + i);
+
+                        int finalI = i;
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                btnLogin.setText(finalI + "");
+                            }
+                        });
+
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    btnLogin.setDisable(false);
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            btnLogin.setText("Login");
+                        }
+                    });
+                }
+            });
+            runnable1.start();
+
+        }

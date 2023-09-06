@@ -21,6 +21,7 @@
         alert.setTitle("This is the Title");
         alert.setHeaderText("This is the header");
         alert.setContentText("This is the contentl\nThis is another line");
+        alert.showAndWait()
 
 // ================= ERROR ALERT ===================
         Alert alert = new Alert(Alert.AlertType.ERROR);

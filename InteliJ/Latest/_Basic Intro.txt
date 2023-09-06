@@ -1,0 +1,31 @@
+==== WHAT IS JavaFX? ====
+
+- It is a media/graphics framework for creating GUIs in Java applications
+- Can run consistently across multiple platforms
+- Applications developed using JavaFX can run on various devices such as dekstop computers, mobile phones, TVs, tablets, etc.
+- JavaFX is intended to replace Swing as the standard GUI library
+- Draws its own components but less communication with OS
+- Lightweight and hardware-accelerated
+- Makes uses of FXML - new XML-based markup language for defining UIs.
+
+
+=== FEATURES OF JavaFX ===
+- Written in Java
+- FXML (uses FMXL for its UI)
+- Scene Builder
+- Swing Interoperability
+- Built-in UI constrols
+- CSS like styling
+- Canvas and Printing API
+- Rich set of APIs
+- Integrated Graphics Library
+- Graphics pipeline
+
+
+=== BRIEF HISTORY OF JavaFX ====
+- Orginally developed by Chris Oliver
+- Acquired by ...
+
+
+=== JavaFX vs Swing/AWT ===
+...

@@ -1,0 +1,11 @@
+=== Add Application Icon ====
+
+- In inteliJ, paste the image within 'resource', or create a folder within 'resource' and paste image within
+- Within Java
+
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Image icon = new Image("img3.jpg");     //Add these 2 lines
+        stage.getIcons().add(icon);              
+
+        stage.setTitle("Hello Test App!");

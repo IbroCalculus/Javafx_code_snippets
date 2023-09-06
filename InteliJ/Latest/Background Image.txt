@@ -1,0 +1,4 @@
+
+#stackPane{
+    -fx-background-image: url("images/fingerprint.png");
+}

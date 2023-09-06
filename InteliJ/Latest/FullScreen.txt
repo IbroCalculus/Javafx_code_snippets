@@ -1,0 +1,5 @@
+
+        stage.setFullScreen(true);
+
+        stage.setFullScreenExitHint("<--- Press 'e' to exit --->");         //These 2 are optional
+        stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("e"));

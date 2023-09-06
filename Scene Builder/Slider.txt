@@ -20,6 +20,10 @@
 
  ================== Binding slider and textfield ================
 
+IMPLEMENT INITIALIZABLE AND IMPLEMENT THE 'initialize' method, ie; 
+		
+	public class HelloController implements Initializable {
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

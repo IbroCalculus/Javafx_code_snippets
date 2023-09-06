@@ -1,0 +1,23 @@
+Assume 2 buttons with fx:id 'btnLogin' and btn'Signup'
+Both share a common on Action, ie onButtonClicked
+
+Within Controller;
+
+    @FXML
+    private Button btnLogin;
+
+    @FXML
+    private Button btnSignup;
+
+
+    @FXML
+    void onButtonClicked(ActionEvent event) {
+
+        if (event.getSource().equals(btnLogin)){
+            System.out.println("You clicked on the login button");
+
+        }else if(event.getSource().equals(btnSignup)){
+            System.out.println("You clicked on the sign up button");
+        }
+
+    }

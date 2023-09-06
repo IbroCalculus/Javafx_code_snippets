@@ -1,4 +1,8 @@
 
+IMPLEMENT INITIALIZABLE AND IMPLEMENT THE 'initialize' method, ie; 
+		
+	public class HelloController implements Initializable {
+
     @FXML
     private Button btn1;
 

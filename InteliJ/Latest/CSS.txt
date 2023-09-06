@@ -1,0 +1,48 @@
+
+
+==== Create a css file. ie style.css (Place within the "resource" folder, the .fxml file package is located in the same directory) =====
+
+.root     //The root or anchorPane
+{
+    -fx-background-color: #1234ff;
+}
+
+.button   //This implies every button element
+{
+    -fx-background-color: #ff0000;
+}
+
+#btn1{   //For button with ID btn1
+    -fx-background-color: #ff0000;
+}
+
+
+========== TO ADD THE CSS FILE TO THE PROJECT =================
+
+------------- Method 1 (Easier. Directly from Scene builder) --------------
+
+- Select the root pane, ie AnchorPane -> Properties - StyleSheet, then navigate to the .css file directory and save.
+- The css will reflect within the controller class as shown below;
+
+     <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../style2.css"   //If just one .css file
+
+- else if more than one .css file;
+
+   <stylesheets>
+      <URL value="@../../../style2.css" />    //The topmost is being used, you can switch between anyone to be used.
+      <URL value="@style.css" />
+   </stylesheets>
+
+
+
+-------------- Method 2 --------------------------------
+
+- Bind CSS file to project
+        Scene scene = new Scene(root, 1000, 500);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+
+
+========== TO MAKE THE CSS REFLECT IN GLUON GUI BUILDER FOR PREVIEW =================
+
+- Within Scene builder;
+   Preview -> Scene Style Sheet -> Add a Style Sheet. (Add the style.css)
