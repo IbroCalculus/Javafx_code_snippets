@@ -1,3 +1,6 @@
+
+They are 2 types of exit: Explicit (Programmatically) and Implicit (Pressing the default X icon)
+
 1. ========================= EXITING FROM AN APPLICATION PROGRAMMATICALLY (explicit exit) ================
 
 --------------------------- Within FXML ---------------------------
