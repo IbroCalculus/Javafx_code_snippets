@@ -1,4 +1,7 @@
 
+CHECK ALSO: Icon.txt
+
+
 ============ 1. IN NETBEANS ============= 
  Within Netbeans, right-click on "Source Packages", Create New Image Folder, copy and paste image into it.
  
@@ -13,8 +16,35 @@
 
 
 =========== 2. IN INTELIJ ================
-- Right click on the package (where Controller and Main java files are located) and create an image package (ie com.example.javafxpractice1.Images)
+- Within resources -> com.example.projectname: Paste the image(s) preferrable within 'images' folder
 
-- Copy and paste the image within the images package, keeping the image file extension assuming the image was renamed
+- In Scenebuilder, use Imageview, navigate to image location. ie; images\lamborghini-Red.png (BETTER SELECT: 'Switch to documet relative path', in the scene builder Image setting ) 
 
-- In Scenebuilder, use Imageview, navigate to image location.
+----- TO USE IMAGE AS APPLICATION ICON, CHECK: Icon.txt -----
+
+
+------ TO PLACE AN IMAGE ONTO AN IMAGEVIEW VIA FILECHOOSER (May check File Chooser.txt) ---------
+
+        btn_upload_vehicle_picture.setOnAction(actionEvent -> {
+            FileChooser filechooser = new FileChooser();
+            filechooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", lstFile));
+            File file = filechooser.showOpenDialog(null);
+
+		----
+            if (file != null) {
+                path = file.getAbsolutePath();
+                System.out.println("ABSOLUTE PATH: " + path);
+
+                try {
+                    Image image = new Image(file.toURI().toURL().toString());
+                    imageview_add_new_vehicle.setImage(image);
+//                    System.out.println(image.getHeight());
+//                    System.out.println(image.getWidth());
+                    } catch (MalformedURLException e) {
+                     e.printStackTrace();
+                }
+            }
+		----
+
+
+        });

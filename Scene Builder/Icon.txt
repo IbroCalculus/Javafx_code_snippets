@@ -1,0 +1,5 @@
+============== CHANGE THE APPLICATION ICON ===========
+- Place the image to be used as icons (ie deal.png) within Resources folder. (NB: It should not be within another folder, ie images/deal.png. Just place it alone within Resources folder
+
+- Within the HelloApplication.java:
+        stage.getIcons().add(new Image("deal.png"));

@@ -16,11 +16,16 @@ public class FXMLDocumentController implements Initializable {
     private Button btn_multiFile;
 
 
+    @FXML
+    private AnchorPane my_anchor_pane;		// The parent anchorPane
+
+
 // MULTIPLE FILE SELECTION
 
     @FXML
     void selectMultiple(ActionEvent event) {
         FileChooser filechooser1 = new FileChooser();
+        filechooser.setTitle("Upload PDF Document");
         //filechooser1.getExtensionFilters().add(new ExtensionFilter("PDF Files","*.pdf")); //Optional; Chooses a type of file
         List<File> list1 = filechooser1.showOpenMultipleDialog(null);
         for (File file: list1)
@@ -36,9 +41,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void selectSingle(ActionEvent event) {
         FileChooser filechooser2 = new FileChooser();
-        //filechooser2.getExtensionFilters().add(new ExtensionFilter("PDF Files","*.pdf")); //Optional; Chooses a type of file
+        filechooser.setTitle("Upload PDF Document");
+        //filechooser2.getExtensionFilters().add(new ExtensionFilter("PDF Files","*.pdf","*.pdf2","*.pdf3")); //Optional; Chooses a type of file. Where .pdf2, .pdf3 assume more than 1 file types.
         filechooser2.getExtensionFilters().add(new ExtensionFilter("Word Files", lstFile)); //Optional; Chooses a type of file. lstFile declared above
-        File file = filechooser2.showOpenDialog(null);
+	
+	Stage stage = (Stage) my_anchor_pane.getScene().getWindow();	// OPTIONAL: If we want file chooser dialog to show application title as its (file chooser's dialog) title
+        File file = filechooser2.showOpenDialog(null);			// Then replace 'null' with 'stage' for the above (Stage stage = ...) to be implemented.
         if(file != null)
         {
             System.out.println("ABSOLUTE PATH: " + file.getAbsolutePath());

@@ -14,7 +14,23 @@
         alert.setHeaderText("This is the header");
         alert.setContentText("This is the contentl\nThis is another line");
         alert.show();
-        alert.showAndWait();
+        //alert.showAndWait();	//This method displays the alert synchronously, meaning that it blocks the execution of the code following the method call until the user closes the alert dialog.
+
+NB: ========== TO MAKE IT INTO A REUSABLE CUSTOM TYPE:  =======
+
+    public static void customAlert(Alert.AlertType alertType, String title, String headerText, String contentText){
+ // public static void customAlert(AlertType alertType, String title, String headerText, String contentText){		// import javafx.scene.control.Alert.AlertType;
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+//        alert.setHeaderText(headerText);
+        alert.setContentText(contentText);
+        alert.show();
+        //alert.showAndWait();
+    }
+--- USAGE:
+	 customAlert(Alert.AlertType.ERROR, "Error","Missing fields","One or more fields are empty");
+      // customAlert(AlertType.ERROR, "Error","Missing fields","One or more fields are empty");		// import javafx.scene.control.Alert.AlertType;
+
 
 // ================= WARNING ALERT ===================
         Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -38,9 +54,9 @@
         alert.setContentText("This is the contentl\nThis is another line");
         
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.get() == ButtonType.OK){
+        if(result.isPresent() && result.get() == ButtonType.OK){
             System.out.println("OK Clicked");
-        } else if(result.get() == ButtonType.CANCEL){
+        } else if(result.isPresent() && result.get() == ButtonType.CANCEL){
             System.out.println("CANCEL Clicked");
         }
 

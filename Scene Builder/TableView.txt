@@ -73,3 +73,19 @@ Replace the ? ? with the java model class and the data type respectively. ie: St
     }
 
 
+============================ CLICK EVENT HANDLING ON TABLE  ============
+
+        table1.setOnMouseClicked(event -> {
+            int selectedIndex = table1.getSelectionModel().getSelectedIndex();
+            String selectedName = table1.getSelectionModel().getSelectedItem().getNameM();
+            System.out.println("You clicked on item index: " + selectedIndex + ", with name:" + selectedName);
+        });
+
+
+
+
+
+
+
+
+

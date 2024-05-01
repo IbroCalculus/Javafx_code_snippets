@@ -1,3 +1,6 @@
+
+CHECK ALSO: Button.txt
+
 Assume 2 buttons with fx:id 'btnLogin' and btn'Signup'
 Both share a common on Action, ie onButtonClicked
 

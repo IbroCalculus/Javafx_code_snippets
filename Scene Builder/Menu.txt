@@ -1,4 +1,33 @@
+Structure: Menubar -> Menu -> MenuItem
+Menubar has id: mymenubar
+Menu has id: menu_addnewvehicle
+MenuItem has id: menuitem_addnewvehicle
 
- Use BorderPane as the root pane
- Place menubar within the BorderPane, resize border pane to fit menubar
- Search 'Menu' for other menu options like menuitem, menuseparator etc
+--------- To navigate to another scene -------
+Assume the new scene of Java (AddNewVehicle.java) and .fxml (AddNewVehicle.fxml)
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("Application started successfully!");
+
+        menuitem_addnewvehicle.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                FXMLLoader fxmlLoader = new FXMLLoader(AddNewVehicle.class.getResource("addnewvehicle.fxml"));
+                try {
+                    Parent root = fxmlLoader.load();
+                    Stage stage = (Stage) mymenubar.getScene().getWindow();							// NOTE THIS LINE: mymenubar
+                    stage.setScene(new Scene(root, 1200, 900));
+                    stage.setTitle("Add new vehicle");
+                    stage.setMaxHeight(900);
+                    stage.setMaxWidth(1200);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        
+        
+    }

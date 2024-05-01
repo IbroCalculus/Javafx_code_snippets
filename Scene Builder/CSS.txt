@@ -6,6 +6,11 @@
 Create a css file. ie style.css
  Right Click -> New -> Other -> Other -> Cascading Style Sheet (NETBEANS)
 
+ Just create a .css file within 'resources' directory (INTELIJ)
+ Go to Scene builder, highlight the root pane (ie AnchorPane), -> Properties -> Stylesheets. Then navigate to and select the .css file.
+ If the css is not previewing on the scene builder, then do this: Preview -> Scene Style Sheet -> Add a Style Sheet. (Add the style.css)
+
+---
 .root     //The root or anchorPane
 {
     -fx-background-color: #1234ff;
@@ -20,13 +25,16 @@ Create a css file. ie style.css
     -fx-background-color: #ff0000;
 }
 
+// Go to scene builder, for each element you want to use this class's properties, Go to: Properties -> Style Class. Then choose this class name from the dropdown
+.tableHeader{
+    -fx-background-color: #ff0000;
+    -fx-font-size: 12px;
+    -fx-color: white;
+}
+
 
 - Bind CSS file to project
         Scene scene = new Scene(root, 1000, 500);
         scene.getStylesheets().add("/javafx_test1/myCSS.css");
-
-- Within Scene builder;
-   Preview -> Scene Style Sheet -> Add a Style Sheet. (Add the style.css)
-   Also, clicking on the root pain (ie AnchorPane) -> Properties - StyleSheet
 
 

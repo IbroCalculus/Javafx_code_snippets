@@ -1,0 +1,72 @@
+================= 1. NAVIGATING TO ANOTHER SCENE BY CLICKING A MENU ITEM ===================
+NOTE: The id 'mymenubar' is not the id of the menu item, rather that of the root menubar.
+
+Assume the new scene of FXML, AddNewVehicle.fxml, with its controller, AddNewVehicle.java
+
+        menuitem_addnewvehicle.setOnAction(actionEvent -> {
+            
+            
+            FXMLLoader fxmlLoader = new FXMLLoader(AddNewVehicle.class.getResource("addnewvehicle.fxml"));   // = new FXMLLoader(getClass().getResource("addnewvehicle.fxml"));
+            try {
+                Parent root = fxmlLoader.load();
+                Stage stage = (Stage) mymenubar.getScene().getWindow();		// NOTE
+                stage.setScene(new Scene(root));
+                stage.setTitle("Add new vehicle");
+                stage.setMaxHeight(900);
+                stage.setMaxWidth(1200);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }            
+            
+        });
+
+
+================= 2. SIMILARLY, CLICKING ON A BUTTON with id btn_main_menu ===================
+
+        btn_main_menu.setOnAction(event -> {
+            
+            
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("hello-view.fxml"));		// NOTE: The class name (HelloController)
+            try {
+                Parent root = fxmlLoader.load();
+                Stage stage = (Stage) btn_main_menu.getScene().getWindow();		// NOTE: btn_main_menu
+                stage.setScene(new Scene(root, 1200, 900));
+                stage.setTitle("Welcome!");
+                stage.setMaxHeight(900);
+                stage.setMaxWidth(1200);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+            
+        });
+
+
+=================== PASSING A VALUE WHEN NAVIGATING TO ANOTHER SCENE ========================
+Make the value to be passed is made a static variable. ie:
+
+---- A. Current Scene/File ----
+
+package com.example.cardealership;			// This is the package name
+class name is: Dashboard.java
+
+    public static String username = "Somebody";
+
+
+
+---- B. Receiving Scene/File ----
+
+import com.example.cardealership.Dashboard.*;		// Make sure the import is there, or manually add
+
+String receivedUsername = Dashbaord.username;
+
+
+
+
+
+
+
+
+

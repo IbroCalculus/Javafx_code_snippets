@@ -14,6 +14,7 @@ CHECK ALSO; CheckBox.   (Both are similar, better use the Combobox)
         System.out.println(comboBox1sValue);
     }
 
+// comboxValue.setValue("ONE");
 
 
     @FXML

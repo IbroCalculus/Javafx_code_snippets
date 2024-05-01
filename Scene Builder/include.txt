@@ -1,0 +1,3 @@
+
+================ Include an fxml layout onto another fxml layout =============
+    <fx:include source="add_new_seller.fxml"/>

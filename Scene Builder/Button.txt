@@ -1,0 +1,45 @@
+
+CHECK ALSO: Event Handling.txt
+
+================ HANDLING BUTTON EVENT  =============
+
+------- METHOD 1 (The default method, simply calling the method) --------
+
+    @FXML
+    protected void onHelloButtonClick() {
+        welcomeText.setText("Welcome to JavaFX Application!");
+        lbl_display.setText(String.valueOf(++count));
+    }
+
+
+------- METHOD 2 (Alternative to simply calling the function) --------
+
+- Give button ID, ie: btn_showAlert
+
+public class HelloController implements Initializable {
+
+    @FXML
+    private Button btn_showAlert;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+        btn_showAlert.setOnAction(new EventHandler<ActionEvent>() {		// HERE
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                showAlert();
+            }
+        });
+
+    }
+
+// -------------- SAME AS ABOVE, USING Lambda expression --------------
+        btn_showAlert.setOnAction(actionEvent -> {
+                showAlert();
+        });
+
+
+// ---------- DISABLE A BUTTON
+        btn_save.setDisable(true);

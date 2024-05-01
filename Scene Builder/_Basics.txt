@@ -1,4 +1,8 @@
 
+================ Include an fxml layout onto another fxml layout =============
+    <fx:include source="add_new_seller.fxml"/>
+
+
  On Scene builder, after saving design, Navigate to;
  View -> Show Sample Controller. Copy and paste the codes into the project controller in Netbeans.
  Watch "Ripple Codes - JAVAFx Tutorial 15-Button Events in Scene Builder_HD" for refresh.
